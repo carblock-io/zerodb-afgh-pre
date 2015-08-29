@@ -2,8 +2,10 @@ from setuptools import setup, find_packages
 from os.path import dirname, abspath, join
 
 INSTALL_REQUIRES = [
-        "zerodb",
-        ]
+    'JPype1',
+    'cachetools',
+    'zerodb',
+    ]
 
 setup(
     name="zerodb-afgh-pre",
