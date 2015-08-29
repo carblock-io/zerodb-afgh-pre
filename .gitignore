@@ -1,0 +1,17 @@
+# pyc files
+*.pyc
+*.pyo
+*.swm
+*.swn
+*.swo
+*.swp
+test.fs.*
+test.fs
+*.db
+*.db.*
+.ropeproject
+.coverage
+/.venv
+/activate
+/deps
+/src/*.egg-info
