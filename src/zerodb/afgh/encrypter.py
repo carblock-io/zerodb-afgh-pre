@@ -3,9 +3,9 @@ from Crypto import Random
 from hashlib import sha256
 import struct
 
-from zerodb.crypto.afgh_pre import afgh_pre
+from zerodb.afgh import crypto
 from zerodb.crypto.exceptions import WrongKeyError
-from encrypt_common import CommonEncrypter
+from zerodb.transform.encrypt_common import CommonEncrypter
 
 
 class AFGHEncrypter(CommonEncrypter):
@@ -32,10 +32,10 @@ class AFGHEncrypter(CommonEncrypter):
         """
         if passphrase is not None:
             assert key is None
-            self.afgh_key = afgh_pre.Key.from_passphrase(passphrase)
+            self.afgh_key = crypto.Key.from_passphrase(passphrase)
         elif key is not None:
             assert len(key) == self.afgh_key_size
-            self.afgh_key = afgh_pre.Key.load_priv(key)
+            self.afgh_key = crypto.Key.load_priv(key)
         self._decrypt_method = getattr(self.afgh_key, self.afgh_decrypt_method)
         self._rand = Random.new()
 
@@ -86,7 +86,7 @@ class AFGHReEncryption(object):
     sig2 = ".eafgh2-aes$"
 
     def __init__(self, re_key_dump):
-        self.key = afgh_pre.ReKey.load(re_key_dump)
+        self.key = crypto.ReKey.load(re_key_dump)
 
     def reencrypt(self, edata):
         if edata.startswith(self.sig1):

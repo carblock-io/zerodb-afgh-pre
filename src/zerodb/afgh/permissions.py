@@ -8,7 +8,7 @@ import subdb
 import zerodb.storage
 from elliptic import ServerStorageMixin, Client
 from ZEO.Exceptions import StorageError
-from zerodb.transform.encrypt_afgh import AFGHReEncryption
+from zerodb.afgh.encrypter import AFGHReEncryption
 
 __module_name__ = "afgh_elliptic_auth"
 

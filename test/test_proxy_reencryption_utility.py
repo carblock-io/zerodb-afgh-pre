@@ -1,9 +1,8 @@
 import pytest
+from zerodb.afgh.encrypter import AFGHEncrypter, WrongKeyError, AFGHEncrypterRe, AFGHReEncryption
 
 
 def test_utility():
-    from zerodb.transform.encrypt_afgh import AFGHEncrypter, WrongKeyError, AFGHEncrypterRe, AFGHReEncryption
-
     utility1 = AFGHEncrypter(passphrase="Hello world")
     utility2 = AFGHEncrypter(passphrase="Hello world")
     utility3 = AFGHEncrypter(passphrase="Other password")
