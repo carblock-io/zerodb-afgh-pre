@@ -3,10 +3,10 @@ import transaction
 from cachetools import TTLCache
 from ZEO import auth
 
-import base
-import subdb
 import zerodb.storage
-from elliptic import ServerStorageMixin, Client
+from zerodb.permissions import base
+from zerodb.permissions import subdb
+from zerodb.permissions.elliptic import ServerStorageMixin, Client
 from ZEO.Exceptions import StorageError
 from zerodb.afgh.encrypter import AFGHReEncryption
 

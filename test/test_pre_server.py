@@ -7,6 +7,7 @@ import zerodb
 from db import create_objects_and_close
 from db import TEST_PASSPHRASE
 from db import Page
+from zerodb.afgh import permissions as afgh
 
 DB = None
 
@@ -29,8 +30,6 @@ def zeo_server_pre(request, pass_file, tempdir):
     :rtype: str
     """
     global DB
-
-    from zerodb.permissions import afgh
 
     class ReDB(zerodb.DB):
         # This should go into a separate module, along with afgh plugin
