@@ -8,16 +8,16 @@ INSTALL_REQUIRES = [
     ]
 
 setup(
-    name="zerodb-afgh-pre",
-    version="0.1",
+    name="zerodb.afgh",
+    version="0.10",
     description="AFGH proxy re-encryption for ZeroDB",
     author="ZeroDB Inc.",
     author_email="michael@zerodb.io",
     license="Proprietary",
-    url="http://zerodb.io",
+    url="https://github.com/carblock-io/zerodb-afgh-pre",
     packages=find_packages(),
     install_requires=INSTALL_REQUIRES,
-    package_dir={"": "src"},
-    dependency_links=[
-        join(dirname(abspath(__file__)), "deps", "zerodb.tar")]
+    # package_dir={"": "src"},
+    include_package_data=True,
+    namespace_packages=['zerodb'],
 )

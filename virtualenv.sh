@@ -9,6 +9,8 @@ then
         echo "  sudo pip install python-virtualenv"
     else
         # Get private dependencies
+        export LDFLAGS="-L/usr/local/opt/openssl/lib"
+        export CPPFLAGS="-I/usr/local/opt/openssl/include"
         mkdir -p deps
         pushd deps
         if [ ! -e "zerodb.tar" ]
@@ -23,7 +25,7 @@ then
         fi
         source activate
         pip install pytest
-        python setup.py develop
+        python setup.py install
     fi
 else
     echo "All done already"
