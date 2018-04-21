@@ -1,0 +1,4 @@
+include zerodb/afgh/crypto/jars/commons-codec-1.6.jar
+include zerodb/afgh/crypto/jars/jpbc-plaf-1.2.0.jar
+include zerodb/afgh/crypto/jars/nics-crypto.jar
+include zerodb/afgh/crypto/jars/jpbc-api-1.2.0.jar
